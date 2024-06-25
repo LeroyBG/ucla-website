@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang = "en-US">
+    <head>
+        <meta charset="utf-8" />
+        
+        <!-- Title, description stuff-->
+         <title>Resume</title>
+         <meta name="author" content="Leroy Betterton Gage" />
+         <meta
+             name="Description"
+             content="My general resume." />
+         
+             <!-- Bookmark icon: Stolen image of a L key on a keyboard. Idea: Make your own?-->
+         <link rel="icon" href="L_keyboard_icon.png" type="image/x-icon" />
+ 
+         <!-- Linking Javascript and CSS Stylesheet -->
+         <script src = "resume.js" defer></script>
+         <link rel="stylesheet" href="resume.css">
+
+
+    </head>
+
+    <body>
+    
+    <!-- main navigation-->
+        <nav>
+            <a href="../index.html">HOME</a></li>
+            <a href="#">RESUME</a></li>
+            <a href="../etc/style_sandbox.html">ETC</a></li>
+        </nav>
+
+        <header>
+            <!-- add title here? -->
+        </header>
+
+        <main>
+            <!-- title -->
+            <h1>Resume</h1>
+            <!-- for border around resume-->
+            <div id = border_around_resume>
+            
+            <!-- holds actual resume -->
+            <div class="actual_resume">
+            <!-- name and contact info -->
+            <h3 id = "name">Leroy Betterton Gage</h3>
+            <div id = "name_and_contact_separator"></div>
+            <div class ="addresses" id = "left">
+                <p><span class = "slightly-large-dark">3470 Beethoven Street<br>Los Angeles, CA 90066<br>
+                <a class = "contact" href = "mailto:leroylightning@g.ucla.edu">
+                    leroylightning@g.ucla.edu</a>
+                </p>
+                <a class = "contact" href ="tel:9294530044">(929) 453-0044</a><br></span>
+                
+            </div>
+
+            <!-- photo -->
+            <!-- commenting out photo right now cause it kinda screws everything up
+            <div class = "headshot" id = "right">
+                <img src="../L_keyboard_icon.png"
+                alt = "a nice picture of me">
+            </div>
+            -->
+            <!-- education -->
+            <div class = "education">
+                <h3>EDUCATION</h3>
+                <p><span class = "college_name">UCLA</span> - 
+                    <a class = "position_name" href = "https://catalog.registrar.ucla.edu/major/2022/LinguisticsandComputerScienceBA" 
+                    target="_blank" rel="noopener noreferrer">
+                    Linguistics and Computer Science 
+                        <abbr title = "Bachelor of Arts">B.A.</abbr></a></p>
+                <p class = "timeframe">Sep 2021 - Present</p>
+                <ul class = "description_points">
+                    <li>3.86 GPA | Activities: Bruin Democrats, Campus Events Commission</li>
+                </ul>
+                <span class = "high_school_name">New West Charter - Los Angeles, CA</span>
+                <br>
+                <span class = "timeframe">Aug 2017 - Jun 2021</span>
+                <ul class = "description points">
+                    <li>4.00 GPA | Student Body Pres., Founder - New West Leftist Club, Varsity XC & Track</li>
+                </ul>
+
+                <hr>
+
+                <!-- Experience -->
+                <div class = "experience">
+                    <h3>ON CAMPUS</h3>
+
+                    <!-- Bruin Dems -->
+                    <span class = "bruin_dems">
+                    <p><span class = "place_of_work">Bruin Democrats</span></p>
+                    <!-- removed timeframe for now because it felt redundant with sub-timeframes
+                        <p class = "timeframe">Sep 2021 - Present</p>
+                    -->
+                    <p class = "BD_sub_position">Policy Director</p>
+                    <p class = "timeframe">Jun 2022 - Present</p>
+                    <ul>
+                        <li>im a bullet</li>
+                    </ul>
+                    <p class = "BD_sub_position_smaller">Director of Dem. Party Relations</p>
+                    <p class = "timeframe_smaller">Sep 2021 - Jun 2022</p>
+                    <ul>
+                        <li>im a bullet</li>
+                    </ul>
+                    </span>
+
+                    <!-- UCLA International Institute -->
+                    <p><span class = "place_of_work">UCLA International Institute</span><span class = "position_name"> - IT Assistant</span></p>
+                    <p class = "timeframe">Jan 2023 - Present</p>
+                    <ul>
+                        <li>Provide audio-visual services to UCLA faculty and events</li>
+                        <li>Assist individual faculty with software and hardware issues</li>
+                        <li>Work in an office environment; answer to superiors and document progress</li>
+                    </ul>
+
+                    <!-- CEC -->
+                    <p><span class = "place_of_work">Campus Events Commission</span><span class = "position_name"> - Public Relations Coordinator</span></p>
+                    <p class = "timeframe">Jan 2023 - Present</p>
+                    <ul>
+                        <li>Increase student engagement in campus events</li>
+                        <li>Write press releases sent to established local magazines and outlets</li>
+                        <li>Coordinate between eight departments to ensure flawless event execution</li>
+                    </ul>
+
+                    
+                </div>
+            </div>
+        </div>
+        </div>
+        </main>
+
+    </body>
+</html>
