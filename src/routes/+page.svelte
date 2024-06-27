@@ -177,7 +177,8 @@ onMount(async () => {
         }
         
         while (!edit.finished) {
-            let delayDuration = edit.building ? 140 : 55
+            let randomOffset = Math.floor(Math.random() * 71)
+            let delayDuration = edit.building ? (120 + randomOffset) : 55
             await delay(delayDuration) // wait
             bigGreetingState = {
                 ...bigGreetingState,
