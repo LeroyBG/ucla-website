@@ -1,3 +1,7 @@
+<script>
+import "../app.css"
+</script>
+
 <nav>
     <ul>
         <li><a href="/#">home</a></li>
