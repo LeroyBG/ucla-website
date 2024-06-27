@@ -85,7 +85,11 @@
                     loading: false
                 }
         } catch (err) {
-            console.log(err)
+            commitsState = {
+                ...commitsState,
+                loading: false,
+                error: true
+            }
         }
     })
 
