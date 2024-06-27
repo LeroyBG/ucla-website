@@ -4,7 +4,7 @@
         PUBLIC_GITHUB_USERNAME,
         PUBLIC_GITHUB_WEBSITE_REPO_NAME
     } from '$env/static/public'
-
+    const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
     const repoURL = `https://github.com/${PUBLIC_GITHUB_USERNAME}/${PUBLIC_GITHUB_WEBSITE_REPO_NAME}`
     let commitsState = {
         loading: true,
@@ -60,27 +60,28 @@
     }
     onMount(async () => { // Note: ensure the repo is public or this won't work!
         try {
+            await delay (5000)
             console.log(PUBLIC_GITHUB_USERNAME)
-                const res = await fetch(`https://api.github.com/repos/${PUBLIC_GITHUB_USERNAME}/${PUBLIC_GITHUB_WEBSITE_REPO_NAME}/commits`, {
-                    headers: {
-                        "Accept": "application/vnd.github+json"
-                    }
-                })
-                if (!res.ok) {
-                    commitsState = {
-                        ...commitsState,
-                        error: true,
-                        loading: false
-                    }
-                    return
+            const res = await fetch(`https://api.github.com/repos/${PUBLIC_GITHUB_USERNAME}/${PUBLIC_GITHUB_WEBSITE_REPO_NAME}/commits`, {
+                headers: {
+                    "Accept": "application/vnd.github+json"
                 }
-                const data = await res.json()
-                console.log(data)
+            })
+            if (!res.ok) {
                 commitsState = {
                     ...commitsState,
-                    commits: data,
+                    error: true,
                     loading: false
                 }
+                return
+            }
+            const data = await res.json()
+            console.log(data)
+            commitsState = {
+                ...commitsState,
+                commits: data,
+                loading: false
+            }
         } catch (err) {
             commitsState = {
                 ...commitsState,
@@ -92,21 +93,24 @@
 
 </script>
 
-<div class="grow w-full h-full flex flex-col items-center">
-    <div class="grow shrink max-h-32" />
-    <div class="grow w-3/5 h-72 flex flex-col justify-center">
+<div class="grow w-full h-full flex flex-col items-center align-baseline">
+    <div class="w-3/5 grow max-h-72 h-72 min-h-1/4 flex flex-col justify-center items-center">
         <p>
             this site was created with the Svelte JavaScript and Tailwind CSS
             frameworks. check out the commit history for this site's git repo
             below. full source code can be found 
-            <a href="PLACEHOLDER">here</a>.
+            <a href={repoURL}>here</a>.
         </p>
     </div>
-    <div class="grow w-3/4">
-        {#if commitsState.loading}
-            <p>getting recent commits...</p>
-        {:else if commitsState.error}
-            <p>something went wrong fetching the repository</p>
+    <div class="grow w-3/4 h-full flex flex-col item-center justify-center">
+        {#if commitsState.loading || commitsState.error}
+            <div class="grow flex justify-center items-center">
+                {#if commitsState.loading}
+                    <p class="text-center">getting recent commits...</p>
+                {:else}
+                    <p class="text-center">something went wrong fetching the repository</p>
+                {/if}
+            </div>
         {:else}
         <h2 class="text-base font-medium text-center">commit history</h2>
         <table class="table-auto">
