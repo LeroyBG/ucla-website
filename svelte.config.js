@@ -1,5 +1,5 @@
-import adapter from '@sveltejs/adapter-vercel';
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import adapter from '@sveltejs/adapter-node';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'; // Change to node adapter
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
