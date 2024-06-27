@@ -1,12 +1,9 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-    // import {
-    //     PUBLIC_GITHUB_USERNAME,
-    //     PUBLIC_GITHUB_WEBSITE_REPO_NAME
-    // } from '$env/dynamic/public'
-    const PUBLIC_GITHUB_USERNAME="LeroyBG"
-
-    const PUBLIC_GITHUB_WEBSITE_REPO_NAME="ucla-website"
+    import {
+        PUBLIC_GITHUB_USERNAME,
+        PUBLIC_GITHUB_WEBSITE_REPO_NAME
+    } from '$env/static/public'
 
     const repoURL = `https://github.com/${PUBLIC_GITHUB_USERNAME}/${PUBLIC_GITHUB_WEBSITE_REPO_NAME}`
     let commitsState = {
@@ -97,10 +94,11 @@
 
 <div class="grow w-full h-full flex flex-col items-center">
     <div class="grow shrink max-h-32" />
-    <div class="grow w-3/5 flex flex-col justify-center">
+    <div class="grow w-3/5 h-72 flex flex-col justify-center">
         <p>
-            This site was created with the Svelte JavaScript and Tailwind CSS
-            frameworks. You can find the repo with all of this project's source code
+            this site was created with the Svelte JavaScript and Tailwind CSS
+            frameworks. check out the commit history for this site's git repo
+            below. full source code can be found 
             <a href="PLACEHOLDER">here</a>.
         </p>
     </div>
@@ -110,13 +108,13 @@
         {:else if commitsState.error}
             <p>something went wrong fetching the repository</p>
         {:else}
-        <h2 class="text-lg font-bold text-center">commit history</h2>
+        <h2 class="text-base font-medium text-center">commit history</h2>
         <table class="table-auto">
             <thead>
-                <tr class="pb-2">
-                    <th>hash</th>
-                    <th>message</th>
-                    <th>date</th>
+                <tr class="pb-2 mt-5">
+                    <th class="font-normal">hash</th>
+                    <th class="font-normal">message</th>
+                    <th class="font-normal">date</th>
                 </tr>
             </thead>
             {#each commitsState.commits as commit}

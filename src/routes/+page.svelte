@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-
+    import {
+        PUBLIC_LINKEDIN_ACCOUNT_URL,
+        PUBLIC_GITHUB_ACCOUNT_URL
+    } from '$env/static/public'
 
 type bigGreetingState = {
     text: string,
@@ -215,9 +218,9 @@ onMount(async () => {
         <p class="font-sans text-theme-dark">
             i'm leroy, a fourth-year computer science student at UCLA. i'm
             interested in music, education & pedagogy, and outer space. check out
-            my <a href="PLACEHOLDER">Github</a> to see whatever cool projects i'm
+            my <a href={PUBLIC_GITHUB_ACCOUNT_URL}>Github</a> to see whatever cool projects i'm
             working on; if you like what you see and want to connect
-            professionally, here's my <a href="PLACEHOLDER">LinkedIn</a>.
+            professionally, here's my <a href={PUBLIC_LINKEDIN_ACCOUNT_URL}>LinkedIn</a>.
         </p><!-- put a little thing with the current weather? -->
         <div class="grow" />
     </div>
