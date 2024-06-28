@@ -51,23 +51,20 @@ let bigGreetingState: bigGreetingState = {
 }
 
 const calculateNewCodeGreeting = ({ text, toggler, lastTemplate, lastGreeting }: bigGreetingState): bigGreetingState => {
-    if (toggler){ // change the greeting
-        let newGreeting = Math.floor(Math.random() * greetings.length)
-        // avoid getting the same greeting twice
-        while (newGreeting === lastGreeting) {
-            newGreeting = Math.floor(Math.random() * greetings.length)
-        }
-        lastGreeting = newGreeting
-        text = (waysOfPrinting[lastTemplate])(greetings[lastGreeting])
-    } else { // change the template
-        let newTemplate = Math.floor(Math.random() * waysOfPrinting.length)
-        // avoid getting the same template twice
-        while (newTemplate === lastTemplate) {
-            newTemplate = Math.floor(Math.random() * waysOfPrinting.length)
-        }
-        lastTemplate = newTemplate
-        text = (waysOfPrinting[lastTemplate])(greetings[lastGreeting])
+    // change greeting
+    let newGreeting = Math.floor(Math.random() * greetings.length)
+    // avoid getting the same greeting twice
+    while (newGreeting === lastGreeting) {
+        newGreeting = Math.floor(Math.random() * greetings.length)
     }
+    lastGreeting = newGreeting
+    let newTemplate = Math.floor(Math.random() * waysOfPrinting.length)
+    // avoid getting the same template twice
+    while (newTemplate === lastTemplate) {
+        newTemplate = Math.floor(Math.random() * waysOfPrinting.length)
+    }
+    lastTemplate = newTemplate
+    text = (waysOfPrinting[lastTemplate])(greetings[lastGreeting])
     toggler = !toggler
     return {
         ...bigGreetingState,
