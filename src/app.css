@@ -11,5 +11,6 @@
     }
     body {
         @apply text-theme-dark;
+        @apply bg-cherryPearl-500;
     }
 }

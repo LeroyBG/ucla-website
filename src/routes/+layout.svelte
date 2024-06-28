@@ -1,9 +1,6 @@
 <script>
 import "../app.css"
 </script>
-<svelte:head>
-    <meta name="theme-color" color="#f9e4f40">
-</svelte:head>
 <div class="min-h-screen bg-cherryPearl-500 flex flex-col">
     <div class="h-20">
         <nav class="w-3/4 h-full">
