@@ -51,7 +51,7 @@ let bigGreetingState: bigGreetingState = {
 }
 
 const calculateNewCodeGreeting = ({ text, toggler, lastTemplate, lastGreeting }: bigGreetingState): bigGreetingState => {
-    if (bigGreetingState.toggler){ // change the greeting
+    if (toggler){ // change the greeting
         let newGreeting = Math.floor(Math.random() * greetings.length)
         // avoid getting the same greeting twice
         while (newGreeting === lastGreeting) {
@@ -186,7 +186,10 @@ onMount(async () => {
             bigGreetingState = {
                 ...bigGreetingState,
                 text: edit.current + "_",
-                isCode: true
+                isCode: true,
+                toggler: nextGreeting.toggler,
+                lastGreeting: nextGreeting.lastGreeting,
+                lastTemplate: nextGreeting.lastTemplate
             }// make change
             edit = makeOneEdit(edit, nextGreeting.text)
         }
@@ -218,9 +221,10 @@ onMount(async () => {
         <p class="font-sans text-theme-dark">
             i'm leroy, a fourth-year computer science student at UCLA. i'm
             interested in music, education & pedagogy, and outer space. check out
-            my <a href={PUBLIC_GITHUB_ACCOUNT_URL}>Github</a> to see whatever cool projects i'm
-            working on; if you like what you see and want to connect
-            professionally, here's my <a href={PUBLIC_LINKEDIN_ACCOUNT_URL}>LinkedIn</a>.
+            my <a href={PUBLIC_GITHUB_ACCOUNT_URL} target="_blank">GitHub</a>
+            to see whatever cool projects i'm working on; if you like what you
+            see and want to connect professionally, here's my 
+            <a href={PUBLIC_LINKEDIN_ACCOUNT_URL} target="_blank">LinkedIn</a>.
         </p><!-- put a little thing with the current weather? -->
         <div class="grow" />
     </div>

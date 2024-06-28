@@ -60,8 +60,7 @@
     }
     onMount(async () => { // Note: ensure the repo is public or this won't work!
         try {
-            await delay (5000)
-            console.log(PUBLIC_GITHUB_USERNAME)
+            // console.log(PUBLIC_GITHUB_USERNAME)
             const res = await fetch(`https://api.github.com/repos/${PUBLIC_GITHUB_USERNAME}/${PUBLIC_GITHUB_WEBSITE_REPO_NAME}/commits`, {
                 headers: {
                     "Accept": "application/vnd.github+json"
@@ -76,7 +75,7 @@
                 return
             }
             const data = await res.json()
-            console.log(data)
+            // console.log(data)
             commitsState = {
                 ...commitsState,
                 commits: data,
@@ -99,7 +98,7 @@
             this site was created with the Svelte JavaScript and Tailwind CSS
             frameworks. check out the commit history for this site's git repo
             below. full source code can be found 
-            <a href={repoURL}>here</a>.
+            <a href={repoURL} target="_blank">here</a>.
         </p>
     </div>
     <div class="grow w-3/4 h-full flex flex-col item-center justify-center">
