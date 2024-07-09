@@ -4,6 +4,7 @@
         PUBLIC_GITHUB_USERNAME,
         PUBLIC_GITHUB_WEBSITE_REPO_NAME
     } from '$env/static/public'
+	import DotDotDot from "$lib/DotDotDot.svelte";
     const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
     const repoURL = `https://github.com/${PUBLIC_GITHUB_USERNAME}/${PUBLIC_GITHUB_WEBSITE_REPO_NAME}`
     let commitsState = {
@@ -105,7 +106,7 @@
         {#if commitsState.loading || commitsState.error}
             <div class="grow flex justify-center items-center">
                 {#if commitsState.loading}
-                    <p class="text-center">getting recent commits...</p>
+                    <p class="text-center">getting recent commits<DotDotDot/></p>
                 {:else}
                     <p class="text-center">something went wrong fetching the repository</p>
                 {/if}
