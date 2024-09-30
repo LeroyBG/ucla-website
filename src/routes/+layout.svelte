@@ -7,7 +7,7 @@ const navItems = [
     ["this site", "/this-site"]
 ]
 </script>
-<div class="min-h-screen bg-cherryPearl-500 flex flex-col">
+<div class="min-h-screen flex flex-col">
     <div class="h-20">
         <nav class="w-3/4 h-full">
             <ul class="flex items-center h-full text-theme-dark ml-3">
@@ -17,7 +17,7 @@ const navItems = [
             </ul>
         </nav>
     </div>
-    <div class="w-full grow flex flex-col">
+    <div class="w-full grow flex flex-col h-full">
         <slot/>
     </div>
 </div>

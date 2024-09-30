@@ -56,6 +56,9 @@ export default {
 				800: "#4c629c",
 				900: "#212b71",
 			},
+			skeletonGreen: {
+				900: "#79dd48"
+			}
 		},
     },
   },
