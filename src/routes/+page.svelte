@@ -32,7 +32,8 @@ const waysOfPrinting = [
     (m: string) => `print_endline "${m}"`, // OCaml
     (m: string) => `std::cout << "${m}\\n";`, // C++
     (m: string) => `write(fd, "${m}", ${m.length + 1});`, // C write to file
-    (m: string) => `println!("${m}")` // Rust
+    (m: string) => `println!("${m}")`, // Rust
+    (m: string) => `echo '${m}'` // Shel 
 ]
 
 let bigGreetingState: bigGreetingState = {
