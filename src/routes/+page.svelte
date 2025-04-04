@@ -217,7 +217,7 @@ onMount(async () => {
             </h1>
         </div>
         <p class="font-sans text-theme-dark">
-            i'm maybe leroy, a fourth-year computer science student at UCLA. i'm
+            i'm leroy, a fourth-year computer science student at UCLA. i'm
             interested in music, education & pedagogy, and outer space. check out
             my <a href={PUBLIC_GITHUB_ACCOUNT_URL} target="_blank">GitHub</a>
             to see whatever cool projects i'm working on; if you like what you
