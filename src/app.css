@@ -1,16 +1,1 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-    a {
-        @apply text-cherryPearl-800 hover:underline decoration-icyLilac-700 underline-offset-2 decoration-2;
-    }
-    ::selection {
-        @apply bg-cherryPearl-800 text-nettleRash-300;
-    }
-    body {
-        @apply text-theme-dark;
-        @apply bg-cherryPearl-500;
-    }
-}
+@import 'tailwindcss';
