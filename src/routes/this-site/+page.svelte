@@ -67,8 +67,6 @@
 			and then restarts the systemd module that controls this server.
 		</p>
 	</div>
-
-	<p>git commits, maybe even older versions of the site</p>
     
     <div class="flex flex-col gap-2">
             <h2>Commits to <a href={PUBLIC_REPO_URL}> This Repo</a></h2>
